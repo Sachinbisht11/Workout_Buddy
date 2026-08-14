@@ -19,7 +19,12 @@
         >npm i -g nodemon
         >Run: nodemon server.js
         >npm i dotenv
-
+## API - Endpoints:
+    GET     /workouts       -->Get all the workout docs
+    POST    /workouts       -->Create a new workout doc
+    GET     /workouts/:id   -->Get a single workout doc
+    Delete  /workouts/:id   -->Deletes a single workout doc
+    PATCH   /workouts/:id   -->updates a single workout
 
 
 ## DB

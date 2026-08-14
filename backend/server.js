@@ -1,5 +1,5 @@
 const express=require('express');
-
+const workoutRoutes=require('./routes/workout');
 const app=express();
 
 const dotenv=require('dotenv');
@@ -8,15 +8,18 @@ const dotenv=require('dotenv');
 dotenv.config(); 
 
 //middleware
+app.use(express.json()) //
 app.use((req,res,next)=>{
   console.log(req.path, req.method);
-  next();
+  next(); 
 });
 
 //Routes
 app.get('/', (req,res)=>{
   res.send('Hello World');
 });
+
+app.use('/api/workouts',workoutRoutes)
 
 // const PORT=3000;
 const PORT=process.env.PORT || 3000;
