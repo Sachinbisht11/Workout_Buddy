@@ -2,6 +2,8 @@ const express=require("express");
 
 const router=express.Router();
 
+const Workout=require('../models/workoutModel')
+
 /**
  * Route: /api/workouts
  * Method: Get
@@ -36,6 +38,15 @@ router.get('/:id',(res,req)=>{
  * Parameters: None
  */
 router.post('/',(res,req)=>{
+    const {title, load, reps}=req.body;
+
+    try{
+        const workout=await Workout.create();
+        res.statusCode(200).json(workout)
+    }
+    catch(error){
+
+    }
     res.json({
         msg:"Create/Add new workout"
     })
