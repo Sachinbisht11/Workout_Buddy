@@ -11,9 +11,9 @@ const Workout=require('../models/workoutModel')
  * Access: Public
  * Parameters: None
  */
-router.get('/',(res,req)=>{
+router.get('/',(req,res)=>{
     res.json({
-        msg:"get all workouts"
+        msg:"Get all workouts"
     })
 })
 
@@ -24,7 +24,7 @@ router.get('/',(res,req)=>{
  * Access: Public
  * Parameters: id
  */
-router.get('/:id',(res,req)=>{
+router.get('/:id',(req,res)=>{
     res.json({
         msg:"get single workout by its id"
     })
@@ -37,19 +37,16 @@ router.get('/:id',(res,req)=>{
  * Access: Public
  * Parameters: None
  */
-router.post('/',(res,req)=>{
+router.post('/',async(req,res)=>{
     const {title, load, reps}=req.body;
 
     try{
-        const workout=await Workout.create();
-        res.statusCode(200).json(workout)
+        const workout=await Workout.create({title, load, reps});
+        res.status(200).json(workout)
     }
     catch(error){
-
+        res.status(400).json({error: error.message})
     }
-    res.json({
-        msg:"Create/Add new workout"
-    })
 })
 
 /**
@@ -59,7 +56,7 @@ router.post('/',(res,req)=>{
  * Access: Public
  * Parameters: id
  */
-router.delete('/:id',(res,req)=>{
+router.delete('/:id',(req,res)=>{
     res.json({
         msg:"Delete a workout"
     })
@@ -72,7 +69,7 @@ router.delete('/:id',(res,req)=>{
  * Access: Public
  * Parameters: id
  */
-router.patch('/:id',(res,req)=>{
+router.patch('/:id',(req,res)=>{
     res.json({
         msg:"Update a workout by its id"
     })

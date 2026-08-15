@@ -21,4 +21,4 @@ const workoutSchema=new Schema({
 }
 )
 
-module.export=mongoose.model("Workout",workoutSchema)
+module.exports=mongoose.model("Workout",workoutSchema)
