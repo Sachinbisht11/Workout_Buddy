@@ -1,6 +1,15 @@
 const Workout=require('../models/workoutModel');
 
 // get all workouts
+const getAllWorkouts=async(req,res)=>{
+    try{
+        const workouts=(await Workout.find()).toSorted({createdAt:-1});
+        res.status(200).json(workouts)
+    }
+    catch(error){
+        res.status(400).json({error: error.message})
+    }
+}
 
 // get a single workout by its id
 
