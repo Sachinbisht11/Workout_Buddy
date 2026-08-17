@@ -52,7 +52,7 @@ const deleteWorkout=async(req,res)=>{
 const updateWorkout=async(req,res)=>{
     const {id}=req.params;
     try{
-        const workout=await Workout.findByIdAndUpdate(id, req.body, { new: true });
+        const workout=await Workout.findOneAndUpdate({_id:id},{...req.body},{new:true});
         res.status(200).json(Workout);
     }
     catch(error){

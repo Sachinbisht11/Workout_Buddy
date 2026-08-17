@@ -4,6 +4,8 @@ const router=express.Router();
 
 const Workout=require('../models/workoutModel')
 
+const {createWorkout, getAllWorkouts, singleWorkout, deleteWorkout, updateWorkout}=require('../controllers/workoutController')
+
 /**
  * Route: /api/workouts
  * Method: Get
@@ -11,11 +13,7 @@ const Workout=require('../models/workoutModel')
  * Access: Public
  * Parameters: None
  */
-router.get('/',(req,res)=>{
-    res.json({
-        msg:"Get all workouts"
-    })
-})
+router.get('/',getAllWorkouts);
 
 /**
  * Route: /api/workouts/:id
@@ -24,11 +22,7 @@ router.get('/',(req,res)=>{
  * Access: Public
  * Parameters: id
  */
-router.get('/:id',(req,res)=>{
-    res.json({
-        msg:"get single workout by its id"
-    })
-})
+router.get('/:id',singleWorkout);
 
 /**
  * Route: /api/workouts
@@ -46,11 +40,7 @@ router.post('/',createWorkout);
  * Access: Public
  * Parameters: id
  */
-router.delete('/:id',(req,res)=>{
-    res.json({
-        msg:"Delete a workout"
-    })
-})
+router.delete('/:id',deleteWorkout);
 
 /**
  * Route: /api/workouts/:id
@@ -59,10 +49,9 @@ router.delete('/:id',(req,res)=>{
  * Access: Public
  * Parameters: id
  */
-router.patch('/:id',(req,res)=>{
-    res.json({
-        msg:"Update a workout by its id"
-    })
-})
+router.patch('/:id',updateWorkout);
+
+
+
 
 module.exports=router
