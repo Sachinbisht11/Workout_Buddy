@@ -12,9 +12,19 @@ const getAllWorkouts=async(req,res)=>{
 }
 
 // get a single workout by its id
+const singleWorkout=async(req,res)=>{
+    const {id}=req.params;
+    try{
+        const workout=await Workout.findById(id);
+        res.status(200).json(workout)
+    }
+    catch(error){
+        res.status(400).json({error: error.message})
+    }
+}
 
 // create a new workout
-constcreateWorkout=async(req,res)=>{
+const createWorkout=async(req,res)=>{
     const {title, load, reps}=req.body;
 
     try{
@@ -27,9 +37,28 @@ constcreateWorkout=async(req,res)=>{
 }
 
 // delete a workout by its id
+const deleteWorkout=await(req,res)=>{
+    const {id}=req.params;
+    try{
+        const workout=await Workout.findByIdAndDelete(id);
+        res.status(200).json(Workout);
+    }
+    catch(error){
+        res.status(404).json({error:error.message});
+    }
+}
 
 // update a workout by its id
+const updateWorkout=await(req,res)=>{
+    const {id}=req.params;
+    try{
+        const workout=await Workout.findByIdAndUpdate(id, req.body, { new: true });
+        res.status(200).json(Workout);
+    }
+    catch(error){
+        res.status(404).json({error:error.message});
+    }
+}
 
 
-
-module.exports={createWorkout}
+module.exports={createWorkout, getAllWorkouts, singleWorkout, deleteWorkout, updateWorkout}
