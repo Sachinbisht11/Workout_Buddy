@@ -37,7 +37,7 @@ const createWorkout=async(req,res)=>{
 }
 
 // delete a workout by its id
-const deleteWorkout=await(req,res)=>{
+const deleteWorkout=async(req,res)=>{
     const {id}=req.params;
     try{
         const workout=await Workout.findByIdAndDelete(id);
@@ -49,7 +49,7 @@ const deleteWorkout=await(req,res)=>{
 }
 
 // update a workout by its id
-const updateWorkout=await(req,res)=>{
+const updateWorkout=async(req,res)=>{
     const {id}=req.params;
     try{
         const workout=await Workout.findByIdAndUpdate(id, req.body, { new: true });
