@@ -1,11 +1,14 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+import React, { useEffect, useState } from 'react'
 
 const Home = () => {
+  useEffect(()=>{
+    const fetchWorkouts=async ()=>{
+      await fetch('http://localhost:3000/api/workouts')
+    }
+  },[])
   return (
-    <div>
-        <Navbar></Navbar>
-        <h4>Home Page</h4>
+    <div className='home'>
+        <h2>Home Page</h2>
     </div>
   )
 }
