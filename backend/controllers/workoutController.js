@@ -3,7 +3,7 @@ const Workout=require('../models/workoutModel');
 // get all workouts
 const getAllWorkouts=async(req,res)=>{
     try{
-        const workouts=(await Workout.find()).toSorted({createdAt:-1});
+        const workouts = await Workout.find().sort({createdAt: 1 });
         res.status(200).json(workouts)
     }
     catch(error){

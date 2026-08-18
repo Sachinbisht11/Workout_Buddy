@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from 'react'
 
 const Home = () => {
+  const [workouts,setWorkout]=useState(null);
   useEffect(()=>{
     const fetchWorkouts=async ()=>{
-      await fetch('http://localhost:3000/api/workouts')
+      const response=await fetch('/api/workouts');
+      const json=await response.json();
+
+      if(response.ok){
+        setWorkout(json);
+      }
     }
+    fetchWorkouts();
   },[])
   return (
     <div className='home'>
-        <h2>Home Page</h2>
+        <div className='workouts'>
+          {
+            workouts && workouts.map((workout)=>(
+              <p>{workout.title }</p>
+            ))
+          }
+        </div>
     </div>
   )
 }

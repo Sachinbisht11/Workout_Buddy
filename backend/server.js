@@ -17,10 +17,6 @@ app.use((req,res,next)=>{
 });
 
 //Routes
-app.get('/', (req,res)=>{
-  res.send('Hello World');
-});
-
 app.use('/api/workouts',workoutRoutes)
 
 //connect to DB
@@ -32,6 +28,6 @@ mongoose.connect(process.env.MONGO_URI)
 })
 .catch((error)=>{console.log(error)})
 
-// const PORT=3000;
-const PORT=process.env.PORT || 3000;
+// const PORT=4000;
+const PORT=process.env.PORT || 4000;
 
