@@ -17,8 +17,8 @@ header .container{
   margin: 0 auto;
   padding: 10px 20px;
   display:flex;
-  align-items: center;
-  justify-content: space-between;
+  align-content: center;
+  justify-items: space-between;
 }
 header a{
   color: black;
@@ -28,4 +28,9 @@ header a{
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
+}
+.home{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
 }
