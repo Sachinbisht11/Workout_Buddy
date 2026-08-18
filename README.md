@@ -8,6 +8,11 @@
     React APP
 
 
+    >> Commands
+        > npx create-react-app frontend
+        > npm i react-router-dom
+        > Run: npm start
+
 
 
 ## Backend (Server)
