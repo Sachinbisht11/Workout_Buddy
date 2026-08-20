@@ -8,7 +8,7 @@ const WorkoutForm = () => {
     <form className='create'>
         <h3>Add a new Workout</h3>
         <label>Exercise Title</label>
-        <input type='text' value={title} onChange={e} />
+        <input type='text' value={title} onChange={(e)=>setTitle(e.target.value)} />
     </form>
   )
 }
