@@ -47,3 +47,18 @@ header a{
   font-size: 1.2rem;
   color: var(--primary);
 }
+.workout-details p{
+  margin:0;
+  font-size: 0.9rem;
+  color:#555;
+}
+.workout-details span{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  padding: 8px;
+  border-radius: 50%;
+  color: #333;
+}
