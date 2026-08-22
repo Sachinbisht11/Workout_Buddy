@@ -12,6 +12,7 @@
         > npx create-react-app frontend
         > npm i react-router-dom
         > Run: npm start
+        > npm i date-fns --save
 
 
 
@@ -21,10 +22,10 @@
     >> Commands
         > npm init -y
         > npm i express
-        >npm i -g nodemon
-        >Run: nodemon server.js
-        >npm i dotenv
-        >npm i mongoose
+        > npm i -g nodemon
+        > Run: nodemon server.js
+        > npm i dotenv
+        > npm i mongoose
 ## API - Endpoints:
     GET     /workouts       -->Get all the workout docs
     POST    /workouts       -->Create a new workout doc
