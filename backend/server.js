@@ -1,8 +1,10 @@
 const express=require('express');
 const workoutRoutes=require('./routes/workout');
 const mongoose=require("mongoose");
+const cors=require('cors');
 
 const app=express();
+app.use(cors());
 
 const dotenv=require('dotenv');
 
