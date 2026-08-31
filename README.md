@@ -26,6 +26,10 @@
         > Run: nodemon server.js
         > npm i dotenv
         > npm i mongoose
+        > npm i bcrypt(encrypt passwords)
+        > npm i validator(email validation)
+
+        
 ## API - Endpoints:
     GET     /workouts       -->Get all the workout docs
     POST    /workouts       -->Create a new workout doc
