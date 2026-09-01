@@ -28,7 +28,9 @@
         > npm i mongoose
         > npm i bcrypt(encrypt passwords)
         > npm i validator(email validation)
+        > npm i jsonwebtoken
 
+        
         
 ## API - Endpoints:
     GET     /workouts       -->Get all the workout docs
