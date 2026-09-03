@@ -51,7 +51,6 @@ userSchema.statics.login=async function(email,password){
         throw Error('All Fields are mandatory')
     }
 
-
     if(!user){
         throw Error('Incorrect email')
     }
@@ -59,7 +58,8 @@ userSchema.statics.login=async function(email,password){
     const match= await bcrypt.compare(password,user.password)
 
     if(!match){
-        throw Erroe('Incorrect password')
+        throw Error('Incorrect password')
     }
+    
 }
 module.exports=mongoose.model('User',userSchema)
