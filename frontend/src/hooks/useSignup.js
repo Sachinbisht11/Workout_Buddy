@@ -17,7 +17,7 @@ export const useSignup=()=>{
             },
             body: JSON.stringify({email,password})
         });
-        const json=response.json();
+        const json=await response.json();
 
         if(!response.ok){
             setIsLoading(false);

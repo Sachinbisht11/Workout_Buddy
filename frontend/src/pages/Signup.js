@@ -1,18 +1,14 @@
 import {useState} from 'react'
+import {useSignup} from '../hooks/useSignup'
 
 function Signup() {
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
+    const {signup,isLoading,error}=useSignup();
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        const response=await fetch(`${process.env.REACT_APP_API_URL}/api/user/signup`,{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({email,password})
-        });
+        await signup(email,password);
     }
 
   return (
@@ -23,7 +19,8 @@ function Signup() {
         <label>Password : </label>
         <input type="password" onChange={(e)=>setPassword(e.target.value)} value={password} />
 
-        <button>Signup</button>
+        <button disabled={isLoading}>Signup</button>
+        {error && <div className='error'>{error}</div>}
     </form>
   )
 }
