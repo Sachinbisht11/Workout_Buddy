@@ -8,6 +8,7 @@ const {createWorkout, getAllWorkouts, singleWorkout, deleteWorkout, updateWorkou
 
 const requireAuth=require('../middleware/requireAuth')
 
+//require auth for all workout routes
 router.use(requireAuth)
 
 
