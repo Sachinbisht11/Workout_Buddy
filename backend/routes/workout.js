@@ -6,6 +6,11 @@ const Workout=require('../models/workoutModel')
 
 const {createWorkout, getAllWorkouts, singleWorkout, deleteWorkout, updateWorkout}=require('../controllers/workoutController')
 
+const requireAuth=require('../middleware/requireAuth')
+
+router.use(requireAuth)
+
+
 /**
  * Route: /api/workouts
  * Method: Get
