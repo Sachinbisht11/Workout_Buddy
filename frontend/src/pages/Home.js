@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import WorkoutDetails from '../components/WorkoutDetails';
 import WorkoutForm from '../components/WorkoutForm';
 import { useWorkoutContext } from '../hooks/useWorkoutContext';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 
 const Home = () => {
   const {workouts,dispatch}=useWorkoutContext();
+  const {user}=useAuthContext();
   useEffect(()=>{
     const fetchWorkouts=async ()=>{
       const response=await fetch(`${process.env.REACT_APP_API_URL}/api/workouts`);
