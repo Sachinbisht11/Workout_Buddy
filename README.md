@@ -1,4 +1,4 @@
-# MernProject
+# WORKOUT BUDYYY
     M: MongoDB (DB)
     E: ExpressJs (Backend)
     R: ReactJs (Frontend)
