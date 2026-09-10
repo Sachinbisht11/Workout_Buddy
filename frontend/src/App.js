@@ -12,8 +12,6 @@ import { useAuthContext } from './hooks/useAuthContext';
 function App() {
   const {user}=useAuthContext();
   return (
-    <AuthContextProvider>
-    <WorkoutsContextProvider>
     <div className="App">
       <BrowserRouter>
       <Navbar />
@@ -26,8 +24,6 @@ function App() {
       </div>
       </BrowserRouter>
     </div>
-    </WorkoutsContextProvider>
-    </AuthContextProvider>
   );
 }
 

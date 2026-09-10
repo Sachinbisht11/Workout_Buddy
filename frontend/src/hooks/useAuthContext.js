@@ -6,7 +6,7 @@ export const useAuthContext=()=>{
     const context=useContext(AuthContext)
 
     if(!context){
-        throw Error('context error')
+        throw Error('context error');
     }
 
     return context
