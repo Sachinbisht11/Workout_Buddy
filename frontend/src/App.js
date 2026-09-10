@@ -2,8 +2,6 @@ import {BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
-import { WorkoutsContextProvider } from './context/WorkoutContext';
-import { AuthContextProvider } from './context/AuthContext';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import { useAuthContext } from './hooks/useAuthContext';
